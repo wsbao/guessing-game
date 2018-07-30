@@ -1,10 +1,11 @@
-file=guessinggame.sh
-all: $(file) README.md
-	echo "# Guessing-game" > README.md
-	echo "" >> README.md
-	echo "This file is created at: \c" >> README.md
-	date >> README.md
-	echo "" >> README.md
-	echo "Number of lines in \"$(file)\": \c" >> README.md
-	wc -l $(file) | egrep -o "[0-9]+" >> README.md
+dependency=guessinggame.sh
+target=README.md
+$(target): $(dependency) Makefile
+	echo "# Guessing-game" > $(target)
+	echo "" >> $(target)
+	echo "This file is created at: \c" >> $(target)
+	date >> $(target)
+	echo "" >> $(target)
+	echo "Number of lines in \"$(dependency)\": \c" >> $(target)
+	wc -l $(dependency) | egrep -o "[0-9]+" >> $(target)
 	
