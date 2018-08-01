@@ -1,6 +1,6 @@
 dependency=guessinggame.sh
 target=README.md
-$(target): $(dependency) Makefile
+$(target): $(dependency) makefile
 	echo "# Guessing-game" > $(target)
 	echo "" >> $(target)
 	echo "This file is created at: \c" >> $(target)
